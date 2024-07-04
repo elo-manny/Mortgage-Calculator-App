@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon" />
+    <title>Mortgage Repayment Calculator</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+
+    <main class="MG-Calculator">
+
+        <!-- 
+            ••••••••• CALCULATE PAYMENT SECTION 
+         -->
+        <section class="MG-Calculator__PS">
+
+            <div class="header">
+                <h1>Mortgage Calculator</h1>
+                <button class="clear-all-btn" id="clearAll" aria-label="Clear-all button" >Clear All</button>
+            </div>
+
+
+
+
+            <form class="MG-Calculator__PS__form" novalidate>
+
+                <!--
+                    Mortgage Amount
+                    Input field
+                -->
+                <div class="input-wrapper">
+                    <p class="label">Mortgage Amount</p>
+                    <div class="input-field mortgage-amount-IF">
+                        <input type="number" class="mortgage-amount">
+                        <span class="units pound">£</span>
+                    </div>
+                    <p class="error-msg hidden">This field is required</p>
+                </div>
+
+
+                <!--
+                        Mortgage Term &
+                        Interest Rate Input fields
+                -->
+                <div class="input-wrapper flex">
+                    <div class="input-group">
+                        <p class="label">Mortgage Term</p>
+                        <div class="input-field mortgage-term-IF">
+                            <input type="number" class="mortgage-term">
+                            <span class="units years">years</span>
+                        </div>
+                        <p class="error-msg hidden">This field is required</p>
+                    </div>
+
+
+                    <div class="input-group">
+                        <p class="label">Interest Rate</p>
+                        <div class="input-field interest-rate">
+                            <input type="number" class="interest-rate">
+                            <span class="units percent">%</span>
+                        </div>
+                        <p class="error-msg hidden">This field is required</p>
+                    </div>
+                </div>
+
+
+
+                <!--
+                    Mortgage type
+                    ( Radio Buttons ) Input fields
+                    
+                -->
+                <div class="input-wrapper">
+                    <p class="label">Mortgage Type</p>
+                    <div class="input-field flex">
+                        <div class="custom-radio-circle">
+                            <input type="radio" id="Repayment" name="mortgageType">
+                            <span class="radio-dot"></span>
+                        </div>
+                        <label for="Repayment">Repayment</label>
+                    </div>
+
+
+                    <div class="input-field flex">
+                        <div class="custom-radio-circle">
+                            <input type="radio" name="mortgageType" id="interestOnly">
+                            <span class="radio-dot"></span>
+                        </div>
+                        <label for="interestOnly">Interest Only</label>
+                    </div>
+                    <p class="error-msg radio-error-msg hidden">This field is required</p>
+                </div>
+
+
+
+
+                <!--
+                    Calculate Payment 
+                    Button
+                -->
+                <button aria-label="Calculate Payment" class="calculate-btn">
+                    <img src="./assets/images/icon-calculator.svg" alt="Calculator Image">
+                    Calculate Payments
+                </button>
+            </form>
+
+        </section>
+
+
+
+
+
+        <!-- 
+            ••••••••• RESULTS SECTION 
+         -->
+        <section class="MG-Calculator__RS">
+
+            <div class="MG-Calculator__RS__empty empty">
+                <div class="image">
+                    <img src="./assets/images/illustration-empty.svg" alt="illustration image">
+                </div>
+
+                <h2 class="header">Results shown here</h2>
+
+                <p class="description">
+                    Complete the form and click “calculate repayments” to see what
+                    your monthly repayments would be.
+                </p>
+            </div>
+
+
+            <div class="MG-Calculator__RS__completed completed hidden">
+
+                <h2 class="header">Your Results</h2>
+
+                <p class="description">
+                    Your results are shown below based on the information you provided.
+                    To adjust the results, edit the form and click “calculate repayments” again.
+                </p>
+
+                <div class="result-dashboard">
+                    <p class="monthly-repayment">
+                        Your monthly repayments
+                    </p>
+
+                    <p class="monthly-payment">
+                        £1,797.74
+                    </p>
+
+                    <div class="divider"></div>
+
+                    <p class="total-term-repayment">
+                        Total you'll repay over the term
+                    </p>
+
+                    <p class="total-term-payment">
+                        £539,322.94
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <script src="./Javascript/main.js"></script>
+</body>
+
+</html>
